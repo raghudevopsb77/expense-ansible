@@ -1,0 +1,49 @@
+
+#Head "Install Nginx"
+#dnf install nginx -y &>>$log_file
+#Stat $?
+#
+#Head "Copy Expense Config File"
+#cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file
+#Stat $?
+#
+#App_Prereq "/usr/share/nginx/html"
+#
+#Head "Start Nginx Service"
+#systemctl enable nginx &>>$log_file
+#systemctl restart nginx &>>$log_file
+#Stat $?
+
+#  DIR=$1
+#
+#  Head "Remove existing App content"
+#  rm -rf $1 &>>$log_file
+#  Stat $?
+#
+#  Head "Create Application Directory"
+#  mkdir $1 &>>$log_file
+#  Stat $?
+#
+#  Head "Download Application Content"
+#  curl -o /tmp/${component}.zip https://expense-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
+#  Stat $?
+#
+#  cd $1
+#
+#  Head "Extracting Application Content"
+#  unzip /tmp/${component}.zip &>>$log_file
+#  Stat $?
+
+- name: Setup Frontend
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Nginx
+      ansible.builtin.dnf:
+        name: nginx
+        state: installed
+
+
+
+
+
