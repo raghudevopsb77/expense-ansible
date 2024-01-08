@@ -1,6 +1,0 @@
-- name: Backend Setup
-  hosts: all
-  become: yes
-  roles:
-    - backend
-
