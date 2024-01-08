@@ -18,21 +18,10 @@
   ansible.builtin.user:
     name: expense
 
-- name: Remove existing App content
-  ansible.builtin.file:
-    path: /app
-    state: absent
-
-- name: Create Application Directory
-  ansible.builtin.file:
-    path: /app
-    state: directory
-
-- name: Download and extract app content
-  ansible.builtin.unarchive:
-    src: https://expense-artifacts.s3.amazonaws.com/backend.zip
-    dest: /app
-    remote_src: true
+- name: App Pre-Requisites
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: app_prereq
 
 - name: Download Dependencies
   community.general.npm:

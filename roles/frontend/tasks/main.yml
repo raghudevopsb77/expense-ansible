@@ -8,21 +8,10 @@
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
 
-- name: Delete Existing App Content
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
-
-- name: Create App Directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
-
-- name: Downlaod and Extract App Content
-  ansible.builtin.unarchive:
-    src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
+- name: App Pre-Requisites
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: app_prereq
 
 - name: Start Nginx Service
   ansible.builtin.systemd_service:
