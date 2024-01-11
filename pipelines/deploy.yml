@@ -3,7 +3,7 @@ pipelines:
   deploy:
     group: defaultGroup
     label_template: "foo-1.0-${COUNT}"
-    lock_behavior: true
+    lock_behavior: none
     display_order: -1
     materials:
       ansible:
