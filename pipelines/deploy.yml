@@ -22,7 +22,7 @@ pipelines:
             tasks:
             - exec:
                 command: ansible-playbook
-                arguments: ["-i", "frontend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml"]
+                arguments: ["-i", "frontend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml", "-e", "frontend"]
 
 
     - QA:
