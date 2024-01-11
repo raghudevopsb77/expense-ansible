@@ -24,6 +24,6 @@ pipelines:
                 command: ls
                 arguments:
                   - -l
-                  - A
+                  - -A
 
 
