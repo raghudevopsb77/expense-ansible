@@ -21,9 +21,49 @@ pipelines:
             timeout: 0
             tasks:
             - exec:
+                command: ansible-playbook
+                arguments: ["-i", "frontend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml"]
+
+
+    - QA:
+        fetch_materials: true
+        approval:
+          type: manual
+        jobs:
+          deployment:
+            timeout: 0
+            tasks:
+            - exec:
                 command: ls
                 arguments:
                   - -l
                   - -A
 
 
+    - UAT:
+        fetch_materials: true
+        approval:
+          type: manual
+        jobs:
+          deployment:
+            timeout: 0
+            tasks:
+            - exec:
+                command: ls
+                arguments:
+                  - -l
+                  - -A
+
+    - PROD:
+        fetch_materials: true
+        approval:
+          type: manual
+        jobs:
+          deployment:
+            timeout: 0
+            tasks:
+            - exec:
+                command: ls
+                arguments:
+                  - -l
+                  - -A
