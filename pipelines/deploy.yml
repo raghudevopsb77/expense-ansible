@@ -20,6 +20,9 @@ pipelines:
           deployment:
             timeout: 0
             tasks:
-            - script: ls -l
+            - exec: ls
+              arguments:
+                - -l
+                - -A
 
 
