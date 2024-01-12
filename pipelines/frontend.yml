@@ -29,6 +29,7 @@ pipelines:
         fetch_materials: true
         approval:
           type: manual
+          allow_only_on_success: true
         jobs:
           deployment:
             timeout: 0
@@ -44,6 +45,7 @@ pipelines:
         fetch_materials: true
         approval:
           type: manual
+          allow_only_on_success: true
         jobs:
           deployment:
             timeout: 0
@@ -58,6 +60,7 @@ pipelines:
         fetch_materials: true
         approval:
           type: manual
+          allow_only_on_success: true
         jobs:
           deployment:
             timeout: 0
