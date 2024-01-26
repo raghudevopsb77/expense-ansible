@@ -46,7 +46,7 @@
     state: import
     name: all
     target: /app/schema/backend.sql
-    login_user: root
-    login_password: "{{ lookup('amazon.aws.aws_ssm', 'dev.mysql.root_password', region='us-east-1' ) }}"
-    login_host: mysql-dev.rdevopsb73.online
+    login_user: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.expense.rds.username', region='us-east-1' ) }}"
+    login_password: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.expense.rds.password', region='us-east-1' ) }}"
+    login_host: "{{ lookup('amazon.aws.aws_ssm', '{{env}}.expense.rds.endpoint', region='us-east-1' ) }}"
 
