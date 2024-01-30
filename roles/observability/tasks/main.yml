@@ -10,7 +10,7 @@
 - name: Copy Node Exporter Service
   ansible.builtin.template:
     src: node_exporter.service
-    dest: /etc/systemd/systemd/node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
 
 - name: Start Node Exporter
   ansible.builtin.systemd_service:
