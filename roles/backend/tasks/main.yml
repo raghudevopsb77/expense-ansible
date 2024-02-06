@@ -29,7 +29,8 @@
 
 - name: Install New relic npm dependency
   ansible.builtin.shell: npm install newrelic --save
-  become_user: expense
+  args:
+      chdir: /app
 
 - name: Reloading SystemD and Start Backend Service
   ansible.builtin.systemd_service:
