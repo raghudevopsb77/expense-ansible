@@ -1,3 +1,4 @@
 component: frontend
 app_location: /usr/share/nginx/html
+app_user: root
 
