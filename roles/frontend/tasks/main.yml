@@ -20,7 +20,7 @@
     state: restarted
 
 - name: NewRelic Setup for Nginx
-  ansible.builtin.shell: curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash &&  NEW_RELIC_API_KEY={{ lookup('amazon.aws.aws_ssm', '{{env}}.{{project_name}}.{{component}}.newrelic.key', region='us-east-1' ) }} NEW_RELIC_ACCOUNT_ID={{ lookup('amazon.aws.aws_ssm', 'newrelic.account', region='us-east-1' ) }} /usr/local/bin/newrelic install -y
+  ansible.builtin.shell: curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash &&  NEW_RELIC_API_KEY={{ lookup('amazon.aws.aws_ssm', '{{env}}.expense.{{service_name}}.newrelic.key', region='us-east-1' ) }} NEW_RELIC_ACCOUNT_ID={{ lookup('amazon.aws.aws_ssm', 'newrelic.account', region='us-east-1' ) }} /usr/local/bin/newrelic install -y
 
 
 
