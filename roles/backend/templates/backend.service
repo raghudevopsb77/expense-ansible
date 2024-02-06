@@ -8,6 +8,7 @@ Environment=NEW_RELIC_APP_NAME="{{ service_name }}"
 Environment=NEW_RELIC_LICENSE_KEY="{{ lookup('amazon.aws.aws_ssm', '{{env}}.expense.{{service_name}}.newrelic.key', region='us-east-1' ) }}"
 ExecStart=/bin/node -r newrelic /app/index.js
 SyslogIdentifier=backend
+WorkingDirectory=/app
 
 [Install]
 WantedBy=multi-user.target
