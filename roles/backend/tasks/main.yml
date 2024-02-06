@@ -28,7 +28,7 @@
     path: /app
 
 - name: Install New relic npm dependency
-  ansible.builtin.shell: npm install newrelic --save
+  ansible.builtin.shell: npm install newrelic --save -g
 
 - name: Reloading SystemD and Start Backend Service
   ansible.builtin.systemd_service:
