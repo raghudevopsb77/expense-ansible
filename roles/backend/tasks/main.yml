@@ -28,7 +28,8 @@
     path: /app
 
 - name: Install New relic npm dependency
-  ansible.builtin.shell: npm install newrelic --save -g
+  ansible.builtin.shell: npm install newrelic --save
+  become_user: expense
 
 - name: Reloading SystemD and Start Backend Service
   ansible.builtin.systemd_service:
