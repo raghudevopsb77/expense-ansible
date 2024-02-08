@@ -1,4 +1,4 @@
 component: frontend
 app_location: /usr/share/nginx/html
 app_user: root
-
+logfile_path: /var/log/nginx/access.log
