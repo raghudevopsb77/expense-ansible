@@ -1,3 +1,5 @@
 component: backend
 app_location: /app
 app_user: expense
+logfile_path: /var/log/backend.log
+
