@@ -39,6 +39,16 @@
     name: filebeat
     state: restarted
 
+- name: Configure rsyslog
+  ansible.builtin.template:
+    src: rsyslog.conf
+    dest: /etc/rsyslog.d/{{component}}.conf
+
+- name: Restart rsyslog
+  ansible.builtin.systemd_service:
+    name: rsyslog
+    state: restarted
+
 
 
 
