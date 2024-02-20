@@ -1,6 +1,8 @@
 format_version: 10
 pipelines:
   frontend:
+    parameters:
+      app_version: ""
     group: defaultGroup
     label_template: "${COUNT}"
     lock_behavior: none
@@ -22,7 +24,7 @@ pipelines:
             tasks:
             - exec:
                 command: ansible-playbook
-                arguments: ["-i", "frontend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml", "-e", "service_name=frontend", "-e", "env=dev"]
+                arguments: ["-i", "frontend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml", "-e", "service_name=frontend", "-e", "env=dev", "-e", "app_version=${app_version}" ]
 
 
     - QA:
