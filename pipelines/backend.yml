@@ -23,8 +23,12 @@ pipelines:
             timeout: 0
             tasks:
             - exec:
-                command: ansible-playbook
-                arguments: ["-i", "backend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml", "-e", "service_name=backend", "-e", "env=dev", "-e", "app_version=${app_version}" ]
+                command: bash
+                arguments: [ "scripts/deployment.sh"]
+#
+#             - exec:
+#                 command: ansible-playbook
+#                 arguments: ["-i", "backend-dev.rdevopsb73.online,", "-e", "ansible_user=centos", "-e", "ansible_password=DevOps321", "expense.yml", "-e", "service_name=backend", "-e", "env=dev", "-e", "app_version=${app_version}" ]
 
 
     - QA:
