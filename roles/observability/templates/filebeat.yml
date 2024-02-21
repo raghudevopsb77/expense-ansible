@@ -155,7 +155,7 @@ setup.kibana:
 # ------------------------------ Logstash Output -------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["logstash.rdevopsb73.online:5044"]
+  hosts: ["elasticsearch-int.rdevopsb73.online:5044"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
