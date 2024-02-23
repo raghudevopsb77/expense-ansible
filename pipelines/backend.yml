@@ -73,7 +73,5 @@ pipelines:
             timeout: 0
             tasks:
             - exec:
-                command: ls
-                arguments:
-                  - -l
-                  - -A
+                command: bash
+                arguments: [ "scripts/deployment.sh"]
